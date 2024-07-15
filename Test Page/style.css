@@ -103,11 +103,32 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 2em;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    background: rgb(74, 8, 144);
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 1;
+    align-items: center;
+    
 }
 
 .form-box h2 {
