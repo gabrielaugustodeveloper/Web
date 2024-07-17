@@ -5,7 +5,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,6 @@ header {
     left: 0;
     width: 100%;
     padding: 15px 1px;
-    /*background: rgb(110, 54, 243);*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,11 +54,11 @@ header {
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background : #fff;
+    background: #fff;
     border-radius: 5px;
     transform-origin: right;
     transform: scaleX(0);
-    transition: transform .5s;
+    transition: transform 0.5s;
 }
 
 .navigation a:hover::after {
@@ -77,38 +76,67 @@ header {
     cursor: pointer;
     font-size: 1.1em;
     color: #fff;
-    font-weight: 500px;
+    font-weight: 500;
     margin-left: 40px;
     transition: 0.5s;
-
 }
 
 .navigation .btnLogin-popup:hover {
     background: #fff;
-    color: #ffffff;
+    color: #162938;
 }
 
 .wrapper {
     position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
     width: 400px;
     height: 440px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    transition: transform 0.5s ease, height 0.4s ease;
+}
+
+.wrapper.active-popup {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.wrapper.active {
+    height: 600px;
 }
 
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
+}
+
+.wrapper .form-box.login {
+    transition: transform 0.18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translate(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform 0.18s ease;
+    transform: translateX(0);
 }
 
 .wrapper .icon-close {
@@ -118,22 +146,20 @@ header {
     width: 45px;
     height: 45px;
     font-size: 2em;
-    color: #ffffff;
-    cursor: pointer;
+    color: #fff;
     display: flex;
     justify-content: center;
+    align-items: center;
     background: rgb(74, 8, 144);
     border-bottom-left-radius: 20px;
     cursor: pointer;
     transition: 0.5s;
     z-index: 1;
-    align-items: center;
-    
 }
 
 .form-box h2 {
     font-size: 2em;
-    color: #ffffff;
+    color: #fff;
     text-align: center;
 }
 
@@ -151,16 +177,16 @@ header {
     left: 35px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: #ffffff;
+    color: #fff;
     font-weight: 500;
     pointer-events: none;
     transition: 0.5s;
 }
 
 .input-box input:focus ~ label,
-
 .input-box input:valid ~ label {
     top: 5px;
+    font-size: 0.85em;
 }
 
 .input-box input {
@@ -170,7 +196,7 @@ header {
     border: none;
     outline: none;
     font-size: 1em;
-    color: #ffffff;
+    color: #fff;
     font-weight: 600;
     padding: 0 35px 0 35px;
 }
@@ -181,13 +207,13 @@ header {
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.2em;
-    color: #ffffff;
-    line-height: 57px; 
+    color: #fff;
+    line-height: 57px;
 }
 
 .remember-forgot {
-    font-size: .9em;
-    color: #ffffff;
+    font-size: 0.9em;
+    color: #fff;
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
@@ -195,12 +221,12 @@ header {
 }
 
 .remember-forgot label input {
-    accent-color: #ffffff;
+    accent-color: #fff;
     margin-right: 3px;
 }
 
 .remember-forgot a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -217,27 +243,27 @@ header {
     border-radius: 25px;
     cursor: pointer;
     font-size: 1.2em;
-    color: #ffffff;
+    color: #fff;
     font-weight: 500;
     margin: 20px 0;
     transition: 0.5s;
 }
 
 .btn:hover {
-    background: #ffffff; 
+    background: #fff;
     color: #162938;
 }
 
 .login-register {
-    font-size: .9em;
-    color: #ffffff;
+    font-size: 0.9em;
+    color: #fff;
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px;
 }
 
 .login-register p a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
@@ -245,4 +271,3 @@ header {
 .login-register p a:hover {
     text-decoration: underline;
 }
-
